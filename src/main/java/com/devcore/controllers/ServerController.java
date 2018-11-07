@@ -24,7 +24,7 @@ public class ServerController {
     private Environment environment;
 
     @RequestMapping(value = "/api/getServerDetails", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public OutputResponse pingServer() {
+    public OutputResponse getServerDetails() {
         ServerDetail serverDetail = new ServerDetail();
         try {
 
@@ -42,6 +42,11 @@ public class ServerController {
             serverDetail.setCode(Constant.ERROR_CODE);
         }
         return serverDetail;
+    }
+
+    @RequestMapping(value = "/api/pingServer", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String pingServer() {
+        return "Server is Running";
     }
 
 }
