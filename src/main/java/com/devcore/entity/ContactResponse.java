@@ -28,4 +28,9 @@ public class ContactResponse extends OutputResponse {
         this.contact = contact;
     }
 
+    @Override
+    public String toString() {
+        return "ContactResponse{" + "contactList=" + contactList + ", contact=" + contact + '}';
+    }
+
 }
